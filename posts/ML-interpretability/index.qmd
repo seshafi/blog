@@ -89,7 +89,7 @@ ICE plots are used to uncover granular insights into feature effects at the inst
 
 |     Method    |     Strengths    |     Limitations    |     Python Libraries    |
 |---|---|---|---|---|
-|     Surrogate Models    |   Simple and interpretable; model-agnostic  | May oversimplify black-box model    |     Scikit-learn, DTExplain    |
+|  Surrogate Models  |   Simple and interpretable; model-agnostic  | May oversimplify black-box model |Scikit-learn|
 |     LIME    |     Localized explanations; flexible    |     Computationally expensive; only local insights    |     LIME    |
 |     SHAP    |     Theoretically sound; global and local explanations    |     Computationally intensive    |     SHAP    |
 |     PDP    |     Intuitive; highlights feature relationships    |     Assumes feature independence    |     Scikit-learn, PDPbox    |

@@ -1,0 +1,8 @@
+---
+title: "Unlocking the AI Black Box"
+author: "Sarah Eshafi"
+date: "2025-01-18"
+categories: [news]
+---
+
+Artificial Intelligence systems, particularly those employing deep learning, are increasingly deployed in critical domains such as healthcare, finance, and autonomous driving. Despite their impressive capabilities and utility, a major obstacle to their widespread trust and adoption is the "black box" problem. This term refers to the lack of transparency in how AI models, especially neural networks, arrive at their decisions. Let’s dive deeper into the implications of this issue and explore methods to mitigate it.

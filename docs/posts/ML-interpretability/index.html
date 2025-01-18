@@ -276,7 +276,61 @@ div.csl-indent {
 </section>
 <section id="comparison" class="level4">
 <h4 class="anchored" data-anchor-id="comparison">Comparison</h4>
-<p>INSERT TABLE HERE</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Method</th>
+<th>Strengths</th>
+<th>Limitations</th>
+<th>Python Libraries</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Surrogate Models</td>
+<td>Simple and interpretable; model-agnostic</td>
+<td>May oversimplify black-box model</td>
+<td>Scikit-learn, DTExplain</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>LIME</td>
+<td>Localized explanations; flexible</td>
+<td>Computationally expensive; only local insights</td>
+<td>LIME</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>SHAP</td>
+<td>Theoretically sound; global and local explanations</td>
+<td>Computationally intensive</td>
+<td>SHAP</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>PDP</td>
+<td>Intuitive; highlights feature relationships</td>
+<td>Assumes feature independence</td>
+<td>Scikit-learn, PDPbox</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>ICE</td>
+<td>Granular, instance-level insights</td>
+<td>Can be cluttered</td>
+<td>Scikit-learn, PDPbox</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 </section>
 </section>
 </section>

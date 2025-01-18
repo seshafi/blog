@@ -78,7 +78,14 @@ How It Works: Similar to PDPs, vary the target feature’s value across its rang
 ICE plots are used to uncover granular insights into feature effects at the instance level. They highlight heterogeneous effects that PDPs might obscure, but they can become easily cluttered with too many data points.
 
 #### Comparison
-INSERT TABLE HERE
+
+|     Method    |     Strengths    |     Limitations    |     Python Libraries    |
+|---|---|---|---|---|
+|     Surrogate Models    |   Simple and interpretable; model-agnostic  | May oversimplify black-box model    |     Scikit-learn, DTExplain    |
+|     LIME    |     Localized explanations; flexible    |     Computationally expensive; only local insights    |     LIME    |
+|     SHAP    |     Theoretically sound; global and local explanations    |     Computationally intensive    |     SHAP    |
+|     PDP    |     Intuitive; highlights feature relationships    |     Assumes feature independence    |     Scikit-learn, PDPbox    |
+|     ICE    |     Granular, instance-level insights    |     Can be cluttered    |     Scikit-learn, PDPbox    |
 
 ## The Path Forward
 As artificial intelligence becomes more integral to critical applications, the need for interpretable and trustworthy models grows ever more urgent. From healthcare to finance and autonomous systems, the ability to explain how AI models arrive at their decisions is paramount to ensuring safety, fairness, and compliance with regulatory standards.

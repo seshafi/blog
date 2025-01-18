@@ -4,6 +4,7 @@ subtitle: "The Case and Approach for Interpretable AI"
 author: "Sarah Eshafi"
 date: "2025-01-18"
 categories: [news]
+bibliography: references.bib
 ---
 
 Artificial Intelligence systems, particularly those employing deep learning, are increasingly deployed in critical domains such as healthcare, finance, and autonomous driving. Despite their impressive capabilities and utility, a major obstacle to their widespread trust and adoption is the "black box" problem. This term refers to the lack of transparency in how AI models, especially neural networks, arrive at their decisions. Let’s dive deeper into the implications of this issue and explore methods to mitigate it.
@@ -22,7 +23,7 @@ In high-stakes applications, unexplained AI behavior can lead to catastrophic fa
 AI systems trained on biased datasets can propagate and amplify these biases. For example, a hiring algorithm trained on historical data may discriminate based on gender or ethnicity. Interpretability allows developers to identify and address these issues.
 
 ### Regulatory Compliance
-Regulations like the EU’s AI Act require transparency for high-risk AI systems (https://www.euaiact.com/key-issue/5). Non-compliance could result in significant legal and financial penalties. For example, banks are required to explain why certain loan requests are denied.
+Regulations like the EU’s AI Act require transparency for high-risk AI systems [@SHAP_docs] (https://www.euaiact.com/key-issue/5). Non-compliance could result in significant legal and financial penalties. For example, banks are required to explain why certain loan requests are denied.
 
 ### Model Improvement & Understanding
 Developers need to understand model behavior to diagnose errors, optimize performance, and ensure generalization to unseen data. Insight into a model’s limitations could help developers improve it on edge cases. Furthermore, a robust understanding of model predictions can help us understand more about the world. This is particularly important in a scientific context.
@@ -54,7 +55,7 @@ SHAP provides both local and global interpretation for both specific observation
 
 | ![](SHAP.png) | 
 |:--:| 
-| *SHAP values of a specific prediction. The features are along the y-axis and the prediction is on the x-axis. The figure should be read from bottom to top. (Lundberg, 2018).* |
+| *SHAP values of a specific prediction. The features are along the y-axis and the prediction is on the x-axis. The figure should be read from bottom to top. [@SHAP_docs].* |
 
 #### Partial Dependence Plots (PDP)
 Partial dependence plots illustrate the marginal effect of one or two features on the average prediction of a model. They are particularly useful for understanding how specific features influence the model's output globally.

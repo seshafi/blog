@@ -22,7 +22,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -173,7 +193,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="regulatory-compliance" class="level3">
 <h3 class="anchored" data-anchor-id="regulatory-compliance">Regulatory Compliance</h3>
-<p>Regulations like the EU’s AI Act require transparency for high-risk AI systems (https://www.euaiact.com/key-issue/5). Non-compliance could result in significant legal and financial penalties. For example, banks are required to explain why certain loan requests are denied.</p>
+<p>Regulations like the EU’s AI Act require transparency for high-risk AI systems <span class="citation" data-cites="SHAP_docs">(<a href="#ref-SHAP_docs" role="doc-biblioref">Lundberg 2018</a>)</span> (https://www.euaiact.com/key-issue/5). Non-compliance could result in significant legal and financial penalties. For example, banks are required to explain why certain loan requests are denied.</p>
 </section>
 <section id="model-improvement-understanding" class="level3">
 <h3 class="anchored" data-anchor-id="model-improvement-understanding">Model Improvement &amp; Understanding</h3>
@@ -212,7 +232,7 @@ ul.task-list li input[type="checkbox"] {
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: center;"><em>SHAP values of a specific prediction. The features are along the y-axis and the prediction is on the x-axis. The figure should be read from bottom to top. (Lundberg, 2018).</em></td>
+<td style="text-align: center;"><em>SHAP values of a specific prediction. The features are along the y-axis and the prediction is on the x-axis. The figure should be read from bottom to top. <span class="citation" data-cites="SHAP_docs">(<a href="#ref-SHAP_docs" role="doc-biblioref">Lundberg 2018</a>)</span>.</em></td>
 </tr>
 </tbody>
 </table>
@@ -268,9 +288,14 @@ ul.task-list li input[type="checkbox"] {
 <p>As artificial intelligence becomes more integral to critical applications, the need for interpretable and trustworthy models grows ever more urgent. From healthcare to finance and autonomous systems, the ability to explain how AI models arrive at their decisions is paramount to ensuring safety, fairness, and compliance with regulatory standards. Interpretability is not merely a desirable feature but a necessity for responsible AI development. Transparent models empower stakeholders to enhance safety and reliability, mitigate bias and promote fairness, ensure regulatory compliance, and improve model performance. While simpler, inherently interpretable models provide clarity, they are often unsuitable for the complexity of modern tasks. In these cases, advanced interpretability techniques allow us to gain insights into black-box models without sacrificing performance. The path forward requires a concerted effort to balance AI’s growing complexity with its usability and trustworthiness. By embedding interpretability as a foundational principle, we can build AI systems that are not only powerful but also aligned with human values, enabling their safe integration into society. If you want to learn more about the technical details of interpretability approaches touched on in this post, I strongly recommend <a href="https://christophm.github.io/interpretable-ml-book/index.html">Christoph Molnar’s book “Interpretable Machine Learning”</a>.</p>
 
 
+
 </section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-SHAP_docs" class="csl-entry" role="listitem">
+Lundberg, Scott. 2018. <span>“An Introduction to Explainable AI with Shapley Values.”</span> <a href="https://shap.readthedocs.io/en/latest/example_notebooks/overviews/An%20introduction%20to%20explainable%20AI%20with%20Shapley%20values.html">https://shap.readthedocs.io/en/latest/example_notebooks/overviews/An%20introduction%20to%20explainable%20AI%20with%20Shapley%20values.html</a>.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

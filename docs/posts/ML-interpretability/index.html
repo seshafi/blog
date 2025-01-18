@@ -193,7 +193,7 @@ div.csl-indent {
 </section>
 <section id="regulatory-compliance" class="level3">
 <h3 class="anchored" data-anchor-id="regulatory-compliance">Regulatory Compliance</h3>
-<p>Regulations like the EU’s AI Act require transparency for high-risk AI systems <span class="citation" data-cites="SHAP_docs">(<a href="#ref-SHAP_docs" role="doc-biblioref">Lundberg 2018</a>)</span> (https://www.euaiact.com/key-issue/5). Non-compliance could result in significant legal and financial penalties. For example, banks are required to explain why certain loan requests are denied.</p>
+<p>Regulations like the EU’s AI Act require transparency for high-risk AI systems <span class="citation" data-cites="EU_reg">(<a href="#ref-EU_reg" role="doc-biblioref">EUAIAct.com 2025</a>)</span>. Non-compliance could result in significant legal and financial penalties. For example, banks are required to explain why certain loan requests are denied.</p>
 </section>
 <section id="model-improvement-understanding" class="level3">
 <h3 class="anchored" data-anchor-id="model-improvement-understanding">Model Improvement &amp; Understanding</h3>
@@ -205,7 +205,7 @@ div.csl-indent {
 <p>Several strategies exist to tackle the black box problem, and they can be broadly categorized into: (1) using interpretable models or (2) leveraging post-hoc techniques. There are two types of interpretability we will consider: local (i.e.&nbsp;why did my model make this specific prediction?) and global (which features are most important to my model?). This is an active area of research, and this blog post will scratch the surface of the most popular, traditional methods that you need to know.</p>
 <section id="interpretable-models" class="level3">
 <h3 class="anchored" data-anchor-id="interpretable-models">Interpretable Models</h3>
-<p>In cases where transparency is highly important, some researchers opt for inherently interpretable models. Linear regression models provide both local and global interpretations, using coefficient weights. Decision trees are another example of an interpretable model, given the fit tree split thresholds and features. There is some research that these models do not sacrifice prediction performance in certain domains (https://hdsr.mitpress.mit.edu/pub/f9kuryi8/release/8). However, this is not always the case and black-box models are often better suited to make predictions. In this case, post-hoc approaches are often used to explain model performance.</p>
+<p>In cases where transparency is highly important, some researchers opt for inherently interpretable models. Linear regression models provide both local and global interpretations, using coefficient weights. Decision trees are another example of an interpretable model, given the fit tree split thresholds and features. There is some research that these models do not sacrifice prediction performance in certain domains <span class="citation" data-cites="int_models">(<a href="#ref-int_models" role="doc-biblioref">Rudin and Radin 2019</a>)</span>. However, this is not always the case and black-box models are often better suited to make predictions. In this case, post-hoc approaches are often used to explain model performance.</p>
 </section>
 <section id="post-hoc-explanation-methods" class="level3">
 <h3 class="anchored" data-anchor-id="post-hoc-explanation-methods">Post-Hoc Explanation Methods</h3>
@@ -241,9 +241,6 @@ div.csl-indent {
 <h4 class="anchored" data-anchor-id="partial-dependence-plots-pdp">Partial Dependence Plots (PDP)</h4>
 <p>Partial dependence plots illustrate the marginal effect of one or two features on the average prediction of a model. They are particularly useful for understanding how specific features influence the model’s output globally. How It Works: With the value of the target feature(s) fixed at different levels, average the model’s predictions over all instances, keeping other features constant. Plot the results to visualize the feature’s impact (see figure below).</p>
 <table class="caption-top table">
-<colgroup>
-<col style="width: 100%">
-</colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: center;"><img src="PDP.png" class="img-fluid"></th>
@@ -251,7 +248,7 @@ div.csl-indent {
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: center;"><em>Partial Decomposition Plots for 3 separate features. (Molnar, 2024)</em></td>
+<td style="text-align: center;"><em>Partial Decomposition Plots for 3 separate features <span class="citation" data-cites="ml_book">(<a href="#ref-ml_book" role="doc-biblioref">Molnar 2024</a>)</span>.</em></td>
 </tr>
 </tbody>
 </table>
@@ -271,7 +268,7 @@ div.csl-indent {
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: center;"><em>ICE Plots for the feature Age and prediction Cancer Probability. (Molnar, 2024)</em></td>
+<td style="text-align: center;"><em>ICE Plots for the feature Age and prediction Cancer Probability <span class="citation" data-cites="ml_book">(<a href="#ref-ml_book" role="doc-biblioref">Molnar 2024</a>)</span>.</em></td>
 </tr>
 </tbody>
 </table>
@@ -285,15 +282,25 @@ div.csl-indent {
 </section>
 <section id="the-path-forward" class="level2">
 <h2 class="anchored" data-anchor-id="the-path-forward">The Path Forward</h2>
-<p>As artificial intelligence becomes more integral to critical applications, the need for interpretable and trustworthy models grows ever more urgent. From healthcare to finance and autonomous systems, the ability to explain how AI models arrive at their decisions is paramount to ensuring safety, fairness, and compliance with regulatory standards. Interpretability is not merely a desirable feature but a necessity for responsible AI development. Transparent models empower stakeholders to enhance safety and reliability, mitigate bias and promote fairness, ensure regulatory compliance, and improve model performance. While simpler, inherently interpretable models provide clarity, they are often unsuitable for the complexity of modern tasks. In these cases, advanced interpretability techniques allow us to gain insights into black-box models without sacrificing performance. The path forward requires a concerted effort to balance AI’s growing complexity with its usability and trustworthiness. By embedding interpretability as a foundational principle, we can build AI systems that are not only powerful but also aligned with human values, enabling their safe integration into society. If you want to learn more about the technical details of interpretability approaches touched on in this post, I strongly recommend <a href="https://christophm.github.io/interpretable-ml-book/index.html">Christoph Molnar’s book “Interpretable Machine Learning”</a>.</p>
+<p>As artificial intelligence becomes more integral to critical applications, the need for interpretable and trustworthy models grows ever more urgent. From healthcare to finance and autonomous systems, the ability to explain how AI models arrive at their decisions is paramount to ensuring safety, fairness, and compliance with regulatory standards. Interpretability is not merely a desirable feature but a necessity for responsible AI development. Transparent models empower stakeholders to enhance safety and reliability, mitigate bias and promote fairness, ensure regulatory compliance, and improve model performance. While simpler, inherently interpretable models provide clarity, they are often unsuitable for the complexity of modern tasks. In these cases, advanced interpretability techniques allow us to gain insights into black-box models without sacrificing performance. The path forward requires a concerted effort to balance AI’s growing complexity with its usability and trustworthiness. By embedding interpretability as a foundational principle, we can build AI systems that are not only powerful but also aligned with human values, enabling their safe integration into society.</p>
+<p>If you want to learn more about the technical details of ML interpretability approaches included in this post, I strongly recommend <a href="https://christophm.github.io/interpretable-ml-book/index.html">Christoph Molnar’s book “Interpretable Machine Learning”</a>.</p>
 
 
 
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-EU_reg" class="csl-entry" role="listitem">
+EUAIAct.com. 2025. <span>“EU AI ACT Transparency Obligations.”</span> <a href="https://www.euaiact.com/key-issue/5">https://www.euaiact.com/key-issue/5</a>.
+</div>
 <div id="ref-SHAP_docs" class="csl-entry" role="listitem">
 Lundberg, Scott. 2018. <span>“An Introduction to Explainable AI with Shapley Values.”</span> <a href="https://shap.readthedocs.io/en/latest/example_notebooks/overviews/An%20introduction%20to%20explainable%20AI%20with%20Shapley%20values.html">https://shap.readthedocs.io/en/latest/example_notebooks/overviews/An%20introduction%20to%20explainable%20AI%20with%20Shapley%20values.html</a>.
+</div>
+<div id="ref-ml_book" class="csl-entry" role="listitem">
+Molnar, Christoph. 2024. <em>Interpretable Machine Learning</em>. <a href="https://christophm.github.io/interpretable-ml-book/index.html">https://christophm.github.io/interpretable-ml-book/index.html</a>.
+</div>
+<div id="ref-int_models" class="csl-entry" role="listitem">
+Rudin, Cynthia, and Joanna Radin. 2019. <span>“Why Are We Using Black Box Models in AI When We Don’t Need to? A Lesson from an Explainable AI Competition.”</span> <a href="https://hdsr.mitpress.mit.edu/pub/f9kuryi8/release/8">https://hdsr.mitpress.mit.edu/pub/f9kuryi8/release/8</a>.
 </div>
 </div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

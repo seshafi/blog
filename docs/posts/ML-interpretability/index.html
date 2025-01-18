@@ -200,15 +200,62 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="shap-shapley-additive-explanations" class="level4">
 <h4 class="anchored" data-anchor-id="shap-shapley-additive-explanations">SHAP (SHapley Additive Explanations)</h4>
-<p>SHAP is another commonly used post-hoc analysis approach that can be applied to any model. It is rooted in cooperative game theory. How It Works: Treat the prediction task as a cooperative game where features are players. Calculate the marginal contribution of each feature by comparing the model’s prediction with and without the feature. Aggregate these contributions across all possible combinations of features to compute Shapley values. SHAP provides both local and global interpretation for both specific observations. It offers a theoretically sound and consistent feature importance values. However, it is computationally intensive, so approximations are usually required for complex models. INSERT IMAGE HERE</p>
+<p>SHAP is another commonly used post-hoc analysis approach that can be applied to any model. It is rooted in cooperative game theory. How It Works: Treat the prediction task as a cooperative game where features are players. Calculate the marginal contribution of each feature by comparing the model’s prediction with and without the feature. Aggregate these contributions across all possible combinations of features to compute Shapley values. SHAP provides both local and global interpretation for both specific observations. It offers a theoretically sound and consistent feature importance values. However, it is computationally intensive, so approximations are usually required for complex models.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 100%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><img src="SHAP.png" class="img-fluid"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><em>SHAP values of a specific prediction. The features are along the y-axis and the prediction is on the x-axis. The figure should be read from bottom to top. (Lundberg, 2018).</em></td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="partial-dependence-plots-pdp" class="level4">
 <h4 class="anchored" data-anchor-id="partial-dependence-plots-pdp">Partial Dependence Plots (PDP)</h4>
-<p>Partial dependence plots illustrate the marginal effect of one or two features on the average prediction of a model. They are particularly useful for understanding how specific features influence the model’s output globally. How It Works: With the value of the target feature(s) fixed at different levels, average the model’s predictions over all instances, keeping other features constant. Plot the results to visualize the feature’s impact (see figure below). INSERT IMAGE HERE PDPs are intuitive and easy to interpret. They are also useful for identifying non-linear relationships between features and predictions. On the other hand, this approach assumes feature independence, which may lead to misleading results in datasets with correlated features.</p>
+<p>Partial dependence plots illustrate the marginal effect of one or two features on the average prediction of a model. They are particularly useful for understanding how specific features influence the model’s output globally. How It Works: With the value of the target feature(s) fixed at different levels, average the model’s predictions over all instances, keeping other features constant. Plot the results to visualize the feature’s impact (see figure below).</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 100%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><img src="PDP.png" class="img-fluid"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><em>Partial Decomposition Plots for 3 separate features. (Molnar, 2024)</em></td>
+</tr>
+</tbody>
+</table>
+<p>PDPs are intuitive and easy to interpret. They are also useful for identifying non-linear relationships between features and predictions. On the other hand, this approach assumes feature independence, which may lead to misleading results in datasets with correlated features.</p>
 </section>
 <section id="individual-conditional-expectations-ice" class="level4">
 <h4 class="anchored" data-anchor-id="individual-conditional-expectations-ice">Individual Conditional Expectations (ICE)</h4>
-<p>ICE plots extend PDPs by showing the effect of a feature for individual data points rather than averaging across all data. Each line in an ICE plot represents the prediction trajectory for a single instance. How It Works: Similar to PDPs, vary the target feature’s value across its range. Instead of averaging predictions, plot the trajectory for each individual instance (see figure below). INSERT IMAGE HERE ICE plots are used to uncover granular insights into feature effects at the instance level. They highlight heterogeneous effects that PDPs might obscure, but they can become easily cluttered with too many data points.</p>
+<p>ICE plots extend PDPs by showing the effect of a feature for individual data points rather than averaging across all data. Each line in an ICE plot represents the prediction trajectory for a single instance. How It Works: Similar to PDPs, vary the target feature’s value across its range. Instead of averaging predictions, plot the trajectory for each individual instance (see figure below).</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 100%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><img src="ICE.png" class="img-fluid"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><em>ICE Plots for the feature Age and prediction Cancer Probability. (Molnar, 2024)</em></td>
+</tr>
+</tbody>
+</table>
+<p>ICE plots are used to uncover granular insights into feature effects at the instance level. They highlight heterogeneous effects that PDPs might obscure, but they can become easily cluttered with too many data points.</p>
 </section>
 <section id="comparison" class="level4">
 <h4 class="anchored" data-anchor-id="comparison">Comparison</h4>
@@ -218,7 +265,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="the-path-forward" class="level2">
 <h2 class="anchored" data-anchor-id="the-path-forward">The Path Forward</h2>
-<p>As artificial intelligence becomes more integral to critical applications, the need for interpretable and trustworthy models grows ever more urgent. From healthcare to finance and autonomous systems, the ability to explain how AI models arrive at their decisions is paramount to ensuring safety, fairness, and compliance with regulatory standards. Interpretability is not merely a desirable feature but a necessity for responsible AI development. Transparent models empower stakeholders to enhance safety and reliability, mitigate bias and promote fairness, ensure regulatory compliance, and improve model performance. While simpler, inherently interpretable models provide clarity, they are often unsuitable for the complexity of modern tasks. In these cases, advanced interpretability techniques allow us to gain insights into black-box models without sacrificing performance. The path forward requires a concerted effort to balance AI’s growing complexity with its usability and trustworthiness. By embedding interpretability as a foundational principle, we can build AI systems that are not only powerful but also aligned with human values, enabling their safe integration into society. If you want to learn more about the technical details of interpretability approaches touched on in this post, I strongly recommend Christoph Molnar’s book “Interpretable Machine Learning”. It can be found here: https://christophm.github.io/interpretable-ml-book/index.html</p>
+<p>As artificial intelligence becomes more integral to critical applications, the need for interpretable and trustworthy models grows ever more urgent. From healthcare to finance and autonomous systems, the ability to explain how AI models arrive at their decisions is paramount to ensuring safety, fairness, and compliance with regulatory standards. Interpretability is not merely a desirable feature but a necessity for responsible AI development. Transparent models empower stakeholders to enhance safety and reliability, mitigate bias and promote fairness, ensure regulatory compliance, and improve model performance. While simpler, inherently interpretable models provide clarity, they are often unsuitable for the complexity of modern tasks. In these cases, advanced interpretability techniques allow us to gain insights into black-box models without sacrificing performance. The path forward requires a concerted effort to balance AI’s growing complexity with its usability and trustworthiness. By embedding interpretability as a foundational principle, we can build AI systems that are not only powerful but also aligned with human values, enabling their safe integration into society. If you want to learn more about the technical details of interpretability approaches touched on in this post, I strongly recommend <a href="https://christophm.github.io/interpretable-ml-book/index.html">Christoph Molnar’s book “Interpretable Machine Learning”</a>.</p>
 
 
 </section>

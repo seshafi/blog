@@ -32,7 +32,7 @@ Developers need to understand model behavior to diagnose errors, optimize perfor
 Several strategies exist to tackle the black box problem, and they can be broadly categorized into: (1) using interpretable models or (2) leveraging post-hoc techniques. There are two types of interpretability we will consider: local (i.e. why did my model make this specific prediction?) and global (which features are most important to my model?). This is an active area of research, and this blog post will scratch the surface of the most popular, traditional methods that you need to know.
 
 ### Interpretable Models
-In cases where transparency is highly important, some researchers opt for inherently interpretable models. Linear regression models provide both local and global interpretations, using coefficient weights. Decision trees are another example of an interpretable model, given the fit tree split thresholds and features.
+In cases where transparency is highly important, some researchers opt for inherently interpretable models. Linear regression models provide both local and global interpretations, using coefficient weights. Decision trees are another example of an interpretable model, given the tree split thresholds and features.
 There is some research that these models do not sacrifice prediction performance in certain domains [@int_models]. However, this is not always the case and black-box models are often better suited to make predictions. In this case, post-hoc approaches are often used to explain model performance.
 
 ### Post-Hoc Explanation Methods
@@ -40,17 +40,23 @@ Post-hoc analysis explain the behavior of a machine learning model after it has 
 
 #### Surrogate Models
 Surrogate models are simplified, interpretable models trained to mimic the behavior of a complex black-box model. The primary goal is to approximate the decision-making process of the original model in a way that humans can easily understand.
+
 How It Works: Generate predictions from the black-box model for a given dataset. Then, train a simpler, interpretable model (e.g., a decision tree or linear regression) using the original input data and the predictions from the black-box model as the target.
+
 This can help global feature importances in any black-box model. However, the surrogate models are inherently less accurate and often oversimplify the problem. They may not fully capture the nuances of the black-box model.
 
 #### LIME (Local Interpretable Model-Agnostic Explanations)
 LIME is a popular technique for local interpretability for any machine learning model. It applies the same principle as surrogate model but zoomed in to a narrow data range.
+
 How it works: Take a prediction you want to explain and generate a synthetic dataset by perturbing the instance’s features (e.g., adding noise or slightly modifying values). Obtain predictions for the perturbed samples from the black-box model and train a simple model (e.g., linear regression) using the perturbed samples as input and their corresponding predictions as the target. Finally, analyze the weights of the interpretable model to understand the importance of features for the specific prediction.
+
 This approach is commonly used because it can be applied to any model flavour and it provides clear explanations for individual predictions. However, it can be computationally expensive for large datasets or complex models.
 
 #### SHAP (SHapley Additive Explanations)
 SHAP is another commonly used post-hoc analysis approach that can be applied to any model. It is rooted in cooperative game theory. 
+
 How It Works: Treat the prediction task as a cooperative game where features are players. Calculate the marginal contribution of each feature by comparing the model’s prediction with and without the feature. Aggregate these contributions across all possible combinations of features to compute Shapley values.
+
 SHAP provides both local and global interpretation for both specific observations. It offers a theoretically sound and consistent feature importance values. However, it is computationally intensive, so approximations are usually required for complex models.
 
 | ![](SHAP.png) | 
@@ -59,6 +65,7 @@ SHAP provides both local and global interpretation for both specific observation
 
 #### Partial Dependence Plots (PDP)
 Partial dependence plots illustrate the marginal effect of one or two features on the average prediction of a model. They are particularly useful for understanding how specific features influence the model's output globally.
+
 How It Works: With the value of the target feature(s) fixed at different levels, average the model’s predictions over all instances, keeping other features constant. Plot the results to visualize the feature’s impact (see figure below). 
 
 | ![](PDP.png) | 
@@ -69,6 +76,7 @@ PDPs are intuitive and easy to interpret. They are also useful for identifying n
 
 #### Individual Conditional Expectations (ICE)
 ICE plots extend PDPs by showing the effect of a feature for individual data points rather than averaging across all data. Each line in an ICE plot represents the prediction trajectory for a single instance.
+
 How It Works: Similar to PDPs, vary the target feature’s value across its range. Instead of averaging predictions, plot the trajectory for each individual instance (see figure below).
 
 | ![](ICE.png) | 
